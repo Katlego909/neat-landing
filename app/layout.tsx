@@ -16,8 +16,7 @@ export const metadata: Metadata = {
   description: "Find and book trusted home service professionals—cleaning, repairs, gardening and more—in just a few taps.",
   keywords: ["home services", "cleaning", "gardening", "plumbing", "handyman", "service provider", "book online"],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
