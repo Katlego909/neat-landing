@@ -3,40 +3,40 @@ import Link from 'next/link'
 export default function Pricing() {
     const plans = [
         {
-            name: "Basic",
-            price: "$19",
+            name: "Starter",
+            price: "$29",
             period: "/month",
-            description: "Perfect for individuals getting started.",
+            description: "For homeowners booking occasional services (cleaning, handyman, lawn).",
             features: [
-                "Access to basic features",
-                "Email support",
-                "Community access"
+                "Post jobs & get bids",
+                "Browse vetted local pros",
+                "Secure payments & receipts"
             ],
             highlight: false,
         },
         {
-            name: "Pro",
-            price: "$39",
+            name: "Premium",
+            price: "$99",
             period: "/month",
-            description: "For professionals who need more power.",
+            description: "For small service businesses who want more leads and scheduling tools.",
             features: [
-                "Everything in Basic",
-                "Priority email support",
-                "Advanced analytics",
-                "Unlimited bookings"
+                "Priority lead placement",
+                "Online booking & calendar sync",
+                "In-app customer messaging",
+                "Verified background checks"
             ],
             highlight: true,
         },
         {
-            name: "Enterprise",
+            name: "Business",
             price: "Custom",
             period: "",
-            description: "Tailored solutions for large teams.",
+            description: "Enterprise-grade tools for multi-tech teams and franchises.",
             features: [
-                "Everything in Pro",
                 "Dedicated account manager",
-                "Custom integrations",
-                "24/7 phone & chat support"
+                "Team accounts & payroll support",
+                "API access & custom integrations",
+                "Route optimization & territory management"
             ],
             highlight: false,
         }
@@ -46,8 +46,8 @@ export default function Pricing() {
         <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-100 py-20 px-4 sm:px-6 lg:px-8 ">
             <div className="max-w-4xl mx-auto text-center mb-16">
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Pricing Plans</h1>
-                <p className="text-lg text-gray-700 mb-2">Choose the plan that fits your needs</p>
-                <p className="text-sm text-gray-500">No hidden fees. Cancel anytime.</p>
+                <p className="text-lg text-gray-700 mb-2">Plans built for homeowners and home-service teams.</p>
+                <p className="text-sm text-gray-500">Transparent pricing. Secure payments. Scales with your business.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                 {plans.map((plan, idx) => (
@@ -88,13 +88,14 @@ export default function Pricing() {
                                     : "bg-gray-100 text-green-700 hover:bg-green-600 hover:text-white"}
                             `}
                         >
-                            {plan.price === "Custom" ? "Contact Sales" : "Choose Plan"}
+                            {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
                         </button>
                     </div>
                 ))}
             </div>
             <div className="max-w-2xl mx-auto mt-16 text-center text-gray-500 text-sm">
-                Need a custom solution or have questions? <Link href="/help-center" className="text-green-700 hover:underline font-medium">Contact us</Link>
+                Need a custom solution or have questions? <Link href="/help-center" className="text-green-700 hover:underline font-medium">Help Center</Link> or{' '}
+                <Link href="/provider-signup" className="text-green-700 hover:underline font-medium">Sign up as a Provider</Link>
             </div>
         </div>
     );
