@@ -1,6 +1,6 @@
 // components/ProviderFAQs.jsx
 "use client"
-import { useEffect } from 'react';
+import FAQList from './FAQList';
 
 const faqList = [
     {
@@ -38,51 +38,5 @@ const faqList = [
 ];
 
 export default function ProviderFAQs() {
-    useEffect(() => {
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('svg');
-                if (answer.classList.contains('hidden')) {
-                    document.querySelectorAll('.faq-answer').forEach(el => {
-                        if (!el.classList.contains('hidden')) {
-                            el.classList.add('hidden');
-                            el.previousElementSibling.querySelector('svg')?.classList.remove('rotate-180');
-                        }
-                    });
-                    answer.classList.remove('hidden');
-                    icon?.classList.add('rotate-180');
-                } else {
-                    answer.classList.add('hidden');
-                    icon?.classList.remove('rotate-180');
-                }
-            });
-        });
-    }, []);
-
-    return (
-        <section id="faqs" className="scroll-mt-16 py-24">
-            <div className="mx-auto px-4 max-w-[1100px] duration-800 ease-out">
-                <h2 className="text-3xl font-bold text-center mb-8">FAQs for Service Providers</h2>
-                <p className="text-gray-600 text-center mb-8 text-md">
-                    Everything you need to know to succeed on our platform
-                </p>
-                <div className="max-w-2xl mx-auto space-y-4">
-                    {faqList.map(({ q, a }) => (
-                        <div key={q} className="border border-gray-200 rounded hover:shadow-lg transition-shadow duration-300">
-                            <button className="w-full flex justify-between items-center px-4 py-3 text-left faq-question">
-                                <span className="font-medium">{q}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div className="px-4 py-2 faq-answer hidden">
-                                <p className="text-gray-600">{a}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+    return <FAQList items={faqList} title="FAQs for Service Providers" description="Everything you need to know to succeed on our platform" />;
 }
