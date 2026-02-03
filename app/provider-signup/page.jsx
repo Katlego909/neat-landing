@@ -65,19 +65,15 @@ export default function ProviderSignupPage() {
             <div className="mx-auto max-w-[1100px] bg-white rounded-xl shadow-lg p-8">
                 {/* Progress Bar */}
                 <div className="mb-8">
-                    <div className="flex justify-between text-sm font-medium text-gray-500">
+                    <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-medium text-gray-700">Step {step + 1} of {STEPS.length}</div>
+                        <div className="text-sm font-medium text-gray-700">{STEPS[step].label}</div>
+                    </div>
+                    <div className="flex gap-2">
                         {STEPS.map((s, i) => (
-                            <span
-                                key={s.key}
-                                className={`inline-block px-2 py-1 rounded-full w-full text-center ${i === step
-                                    ? "bg-green-600 text-white"
-                                    : i < step
-                                        ? "bg-green-100 text-green-600"
-                                        : "bg-gray-100 text-gray-400"
-                                    }`}
-                            >
-                                {s.label}
-                            </span>
+                            <div key={s.key} className="flex-1">
+                                <div className={`h-2 rounded-full ${i <= step ? 'bg-green-600' : 'bg-gray-200'}`} />
+                            </div>
                         ))}
                     </div>
                 </div>

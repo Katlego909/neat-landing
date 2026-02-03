@@ -32,8 +32,9 @@ export default function ServicesInfo({ onBack, onNext, initial }) {
                             checked={selected.includes(svc)}
                             onChange={() => toggle(svc)}
                             className="h-4 w-4"
+                            aria-checked={selected.includes(svc)}
                         />
-                        <span>{svc}</span>
+                        <span className="ml-2">{svc}</span>
                     </label>
                 ))}
             </div>

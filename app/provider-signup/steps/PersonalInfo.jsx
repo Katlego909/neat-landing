@@ -16,40 +16,52 @@ export default function PersonalInfo({ onNext, initial }) {
         <form onSubmit={handleSubmit} className="space-y-6">
             <h2 className="text-2xl font-bold">Personal Info</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={e => setFirstName(e.target.value)}
+                        onInput={e => setFirstName(e.target.value)}
+                        required
+                        className="w-full px-4 py-2 border rounded-lg"
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={e => setLastName(e.target.value)}
+                        required
+                        className="w-full px-4 py-2 border rounded-lg"
+                    />
+                </div>
+            </div>
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                 <input
-                    type="text"
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={e => setFirstName(e.target.value)}
-                    onInput={e => setFirstName(e.target.value)}
-                    required
-                    className="w-full px-4 py-2 border rounded-lg"
-                />
-                <input
-                    type="text"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={e => setLastName(e.target.value)}
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                     required
                     className="w-full px-4 py-2 border rounded-lg"
                 />
             </div>
-            <input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                className="w-full px-4 py-2 border rounded-lg"
-            />
-            <input
-                type="tel"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={e => setPhone(e.target.value)}
-                required
-                className="w-full px-4 py-2 border rounded-lg"
-            />
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                    required
+                    className="w-full px-4 py-2 border rounded-lg"
+                />
+            </div>
             <button
                 type="submit"
                 className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"

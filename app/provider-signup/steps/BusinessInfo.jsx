@@ -16,39 +16,51 @@ export default function BusinessInfo({ onBack, onNext, initial }) {
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             <h2 className="text-2xl font-bold">Business Info</h2>
-            <input
-                type="text"
-                placeholder="Business Name"
-                value={businessName}
-                onChange={e => setBusinessName(e.target.value)}
-                required
-                className="w-full px-4 py-2 border rounded-lg"
-            />
-            <input
-                type="text"
-                placeholder="Address"
-                value={address}
-                onChange={e => setAddress(e.target.value)}
-                required
-                className="w-full px-4 py-2 border rounded-lg"
-            />
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Business Name</label>
+                <input
+                    type="text"
+                    placeholder="Business Name"
+                    value={businessName}
+                    onChange={e => setBusinessName(e.target.value)}
+                    required
+                    className="w-full px-4 py-2 border rounded-lg"
+                />
+            </div>
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                <input
+                    type="text"
+                    placeholder="Address"
+                    value={address}
+                    onChange={e => setAddress(e.target.value)}
+                    required
+                    className="w-full px-4 py-2 border rounded-lg"
+                />
+            </div>
             <div className="grid grid-cols-2 gap-4">
-                <input
-                    type="text"
-                    placeholder="City"
-                    value={city}
-                    onChange={e => setCity(e.target.value)}
-                    required
-                    className="px-4 py-2 border rounded-lg"
-                />
-                <input
-                    type="text"
-                    placeholder="ZIP Code"
-                    value={zip}
-                    onChange={e => setZip(e.target.value)}
-                    required
-                    className="px-4 py-2 border rounded-lg"
-                />
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">City</label>
+                    <input
+                        type="text"
+                        placeholder="City"
+                        value={city}
+                        onChange={e => setCity(e.target.value)}
+                        required
+                        className="px-4 py-2 border rounded-lg w-full"
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">ZIP Code</label>
+                    <input
+                        type="text"
+                        placeholder="ZIP Code"
+                        value={zip}
+                        onChange={e => setZip(e.target.value)}
+                        required
+                        className="px-4 py-2 border rounded-lg w-full"
+                    />
+                </div>
             </div>
             <div className="flex justify-between">
                 <button type="button" onClick={onBack} className="px-6 py-3 border rounded-lg">
