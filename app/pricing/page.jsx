@@ -1,3 +1,5 @@
+"use client"
+import Link from 'next/link'
 export default function Pricing() {
     const plans = [
         {
@@ -92,7 +94,7 @@ export default function Pricing() {
                 ))}
             </div>
             <div className="max-w-2xl mx-auto mt-16 text-center text-gray-500 text-sm">
-                Need a custom solution or have questions? <a href="/contact" className="text-green-700 hover:underline font-medium">Contact us</a>
+                Need a custom solution or have questions? <Link href="/help-center" className="text-green-700 hover:underline font-medium">Contact us</Link>
             </div>
         </div>
     );

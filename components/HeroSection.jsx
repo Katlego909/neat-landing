@@ -34,7 +34,7 @@ export default function HeroSection() {
                         Connect with vetted professionals for cleaning, repairs, gardening, and more right from your phone
                     </p>
                     <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-                        <Button href="#book-service" variant="primary">
+                        <Button href="/#get-started" variant="primary">
                             Book a Service
                         </Button>
                         <Button href="/service-provider" variant="secondary">

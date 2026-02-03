@@ -8,7 +8,9 @@ export default function Header() {
 
     // lock body scroll when mobile menu is open
     useEffect(() => {
-        document.body.style.overflow = menuOpen ? 'hidden' : '';
+        if (typeof window !== 'undefined') {
+            document.body.style.overflow = menuOpen ? 'hidden' : '';
+        }
     }, [menuOpen]);
 
     return (
@@ -25,10 +27,9 @@ export default function Header() {
                 </Link>
 
                 <ul className="hidden md:flex space-x-8 text-sm font-medium">
-                    <li><a href="#how-it-works" className="hover:text-green-700 transition-colors">How it works</a></li>
-                    <li><a href="#popular-services" className="hover:text-green-700 transition-colors">Services</a></li>
-
-                    <li><a href="#features" className="hover:text-green-700 transition-colors">Features</a></li>
+                    <li><Link href="/#how-it-works" className="hover:text-green-700 transition-colors">How it works</Link></li>
+                    <li><Link href="/#popular-services" className="hover:text-green-700 transition-colors">Services</Link></li>
+                    <li><Link href="/#features" className="hover:text-green-700 transition-colors">Features</Link></li>
 
                     <li>
                         <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-green-700 transition-colors">
@@ -42,12 +43,12 @@ export default function Header() {
                     <Link href="/login" className="text-sm font-medium text-gray-700 hover:text-green-700 transition-colors">
                         Login
                     </Link>
-                    <a
-                        href="#get-started"
+                    <Link
+                        href="/#get-started"
                         className="px-4 py-2 bg-primary text-white text-sm font-semibold rounded hover:bg-green-700 transition-colors transform hover:scale-105"
                     >
                         Get Started
-                    </a>
+                    </Link>
                 </div>
 
                 <button
@@ -64,21 +65,25 @@ export default function Header() {
             {menuOpen && (
                 <div className="md:hidden bg-white border-t">
                     <ul className="px-4 py-2 space-y-2">
-                        <li><a href="#how-it-works" className="block text-gray-700 hover:text-green-700 transition-colors">How it works</a></li>
-                        <li><a href="#pricing" className="block text-gray-700 hover:text-green-700 transition-colors">Pricing</a></li>
-                        <li><a href="#features" className="block text-gray-700 hover:text-green-700 transition-colors">Features</a></li>
+                        <li><Link href="/#how-it-works" className="block text-gray-700 hover:text-green-700 transition-colors">How it works</Link></li>
+                        <li>
+                            <Link href="/pricing" className="block text-gray-700 hover:text-green-700 transition-colors">
+                                Pricing
+                            </Link>
+                        </li>
+                        <li><Link href="/#features" className="block text-gray-700 hover:text-green-700 transition-colors">Features</Link></li>
                         <li>
                             <Link href="/login" className="block text-gray-700 hover:text-green-700 transition-colors">
                                 Login
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="#get-started"
+                            <Link
+                                href="/#get-started"
                                 className="block px-4 py-2 bg-primary text-white text-center rounded hover:bg-green-700 transition-colors transform hover:scale-105"
                             >
                                 Get Started
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

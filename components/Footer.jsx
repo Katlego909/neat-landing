@@ -8,12 +8,12 @@ export default function Footer() {
         {
             heading: 'Company',
             links: ['Help Center', 'Contact Us', 'About Us', 'Our Blog', 'Careers', 'Apply as a Worker'],
-            hrefs: ['/help-center', '/contact', '/about', '/blog', '/careers', '/apply-worker'],
+            hrefs: ['/help-center', '/help-center', '/', '/', '/', '/provider-signup'],
         },
         {
             heading: 'Services',
             links: ['Our Services', 'Our Locations', 'Privacy Policy', 'Terms & Conditions', 'Booking Cover', 'Campaigns & Competitions', 'Buy a Voucher'],
-            hrefs: ['/services', '/locations', '/privacy-policy', '/terms-conditions', '/booking-cover', '/campaigns', '/buy-voucher'],
+            hrefs: ['/', '/', '/privacy-policy', '/terms-conditions', '/', '/', '/'],
         },
         {
             heading: 'Download',
